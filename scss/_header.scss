@@ -1,0 +1,122 @@
+.header {
+  background: $secondary-color url(../img/main-bg.jpg) center center/cover no-repeat ;
+  min-height: 100%;
+
+  .navbar {
+    padding: 0;
+    @include medium {
+      padding: .5rem 0 ;
+    }
+    @include small {
+      padding: .4rem 0 ;
+    }
+    @include xsmall {
+      padding: .3rem 0;
+    }
+
+    img {
+      width: 120px;
+    }
+
+    .navbar-toggler {
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  
+    .nav-item {
+      text-transform: uppercase;
+      padding: 2.25rem .5rem;
+      /**Media Query */   
+      @include medium {
+        padding: 1rem 0;
+      } 
+      @include small {
+        padding: .9rem 0;
+      } 
+      @include xsmall {
+        padding: .7rem;
+      }
+
+
+      .nav-link {
+        color: $white ;
+        font-weight: 500;
+        @include transition;
+        &:hover {
+          color: darken($white, 9);
+        }
+      }
+    }
+  }
+}
+
+.slider{
+  color: $white;
+  padding: 6.5rem 0;
+  // Media Query 
+  @include xsmall {
+    padding: 3.2rem 0;
+  } 
+  .banner {
+    text-align: center;
+
+    &-heading {
+      font-size: 3rem;
+      font-family: $title-font;
+      font-weight: 600;
+      text-transform: capitalize;
+      padding-top: 3rem;
+      letter-spacing: .4rem;
+      // Media Query 
+      @include medium {
+        font-size: 2.5rem;
+      }
+      @include small {
+        font-size: 2.3rem;
+        letter-spacing: .3rem;
+      }
+      @include xsmall {
+        font-size: 1.8rem;
+        letter-spacing: normal;
+        padding-top: 2rem;
+        width: 80%;
+        margin: auto;
+      }
+    }
+
+    &-text {
+      width: 40vw;
+      margin: auto;
+      padding: 2.5rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      @include large {
+        width: 50vw;
+      }
+      @include medium {
+        width: 80vw;
+      }
+      @include small {
+        width: 90vw;
+      }
+      @include xsmall {
+        width: 100%;
+        padding: 1.5rem;
+        font-size: .9rem;
+      }
+    }
+
+    &-btn {
+      color: $white;
+      @include main-btn;
+      @include transition;
+
+      &:hover {
+        color: $secondary-color;
+        background-color: $white;
+      }
+    }
+  }
+}

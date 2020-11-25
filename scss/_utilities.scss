@@ -1,0 +1,180 @@
+.container {
+  max-width: 1110px;
+}
+
+.container-flex {
+  @include flex;
+  flex-direction: column;
+}
+
+hr {
+  margin: 0; 
+  background-color: #fff;
+}
+
+.bg-grey {
+  background-color: $bg-grey;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.pb-30 {
+  padding-bottom: 30px;
+}
+
+// Padding before and after sections
+.sttn-section {
+  padding:5rem
+}
+
+.subheading,
+.heading {
+  font-family: $title-font;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  span {
+    color: $secondary-color;
+  }
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.text {
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: $text-color;
+}
+
+// Stretch card columns to make same height
+.stretch-col {
+  @include flex;
+  align-items: stretch;
+}
+
+/* // enable scroll owl carousel on mobile */
+.owl-carousel .owl-stage, .owl-carousel.owl-drag .owl-item{
+  -ms-touch-action: auto;
+      touch-action: auto;
+}
+
+//add padding to last 3 child
+/*&:nth-last-child(-n+3) {
+  padding-top: 30px;
+}*/
+
+/* Responsive classes*/
+
+// 2px line after logo
+.logo{
+  font-size: 2.5rem;
+  font-family: $logo-font;
+  padding-bottom: .8rem;
+  display: inline-block;
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: $white;
+  }
+  @include medium {
+    font-size: 2rem;
+  }
+  @include xsmall {
+    font-size: 1.6rem;
+  }
+}
+
+.heading {
+  font-size: 3rem;
+  text-transform: capitalize;
+  padding: 1.5rem 0 6rem;
+  position: relative;
+  // Media Query 
+  @include small {
+    font-size: 2.8rem;
+  }
+  @include xsmall {
+    font-size: 1.6rem;
+    padding: 1.2rem 0 4rem;
+  }
+
+  //triangle after heading
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: calc(8px + 20px);     //sum of 8px and heading::after bottom size
+    height: 0px;
+    width: 0;
+    border-top: 25px solid $bg-grey;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    z-index: 1;
+    @include transform(translate(-50%));
+
+    //Media Query
+    @include xsmall {
+      border-top: 15px solid $bg-grey;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      bottom: 18px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    height: 60px;
+    width: 60px;
+    background: $gradient;
+    clip-path: polygon(100% 0%, 0 0, 50% 50%);
+    @include transform(translate(-50%));
+
+    // Media Query
+    @include xsmall {
+      height: 40px;
+      width: 40px;
+      bottom: 10px;
+    }
+  }
+}
+
+.subheading {
+  @include xsmall {
+    font-size: .85rem;
+  }
+}
+
+.title {
+  font: 2rem $title-font;
+  text-transform: capitalize;
+  @include transition();
+  //Media Query
+  @include large {
+    font-size: 1.8rem;
+  }
+  @include medium {
+    font-size: 1.9rem;
+  }
+  @include small {
+    font-size: 1.9rem;
+  }
+  @include xsmall {
+    font-size: 1.4rem;
+  }
+}

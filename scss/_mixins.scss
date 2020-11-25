@@ -1,0 +1,193 @@
+/* !!!!!!!
+ADD text-align and linear-gradient cross browser mixin
+*/
+
+
+//    Mixins
+
+@mixin main-btn {
+  text-transform: capitalize;
+  border: 2px solid ;
+  border-radius: 0;
+  font-weight: 700;
+  padding: 1rem 4rem;
+
+  // Media Query 
+  @include large {
+    padding: 1rem 3.9rem;
+  }
+  @include xsmall {
+    padding: .5rem 2rem !important;
+  }
+}
+
+@mixin bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin card-shadow {
+  border: none;
+  box-shadow: 0 0 10px #c0c0c0;
+}
+
+@mixin border-image($args) {
+  -webkit-border-image: $args;
+     -moz-border-image: $args;
+          border-image: $args;
+}
+
+@mixin transition($args: all 0.3s ease 0s) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+       -o-transition: $args;
+          transition: $args;
+}
+
+@mixin flex-center {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow($args) {
+  -webkit-box-shadow: $args;
+     -moz-box-shadow: $args;
+          box-shadow: $args;
+} 
+
+@mixin transition-duration($args1, $args2) {
+  -webkit-transition-duration: $args1, $args2;
+     -moz-transition-duration: $args1, $args2;
+       -o-transition-duration: $args1, $args2;
+          transition-duration: $args1, $args2;
+}
+
+@mixin transition-delay($args1, $args2) {
+  -webkit-transition-delay: $args1, $args2;
+     -moz-transition-delay: $args1, $args2;
+       -o-transition-delay: $args1, $args2;
+          transition-delay: $args1, $args2;
+}
+
+@mixin transition-property($args1, $args2) {
+  -webkit-transition-property: $args1, $args2;
+     -moz-transition-property: $args1, $args2;
+       -o-transition-property: $args1, $args2;
+          transition-property: $args1, $args2;
+}
+
+@mixin gradient($args1,$args2){
+    -webkit-linear-gradient:(0deg, $args1, $args2);
+       -moz-linear-gradient:(0deg, $args1, $args2);
+         -o-linear-gradient:(0deg, $args1, $args2);
+           -linear-gradient:(0deg, $args1, $args2);
+}
+
+
+@mixin filter($filter) { 
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -ms-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+        -ms-transform: $transform;
+         -o-transform: $transform;
+            transform: $transform;
+}
+
+@mixin transform-origin($value) {
+    -webkit-transform-origin: $value;
+       -moz-transform-origin: $value;
+        -ms-transform-origin: $value;
+         -o-transform-origin: $value;
+            transform-origin: $value;
+}
+
+@mixin backface-visibility($value) {
+    -webkit-backface-visibility: $value;
+       -moz-backface-visibility: $value;
+            backface-visibility: $value;
+}
+
+@mixin calc ( $property, $expression ) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin keyframes ( $animation-name ) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name}  {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation ($args) {
+  -webkit-animation: $args;
+     -moz-animation: $args;
+       -o-animation: $args;
+          animation: $args;
+}
+
+/* Large desktops Layout: 1280px */
+@mixin xlarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+/* Desktops Layout: 768px */
+@mixin large {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@mixin medium {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@mixin small {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@mixin xsmall {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+
+// // for iPhone 5S, Galaxy Fold
+// @mixin extra-xsmall {
+//   @media (max-width: 358.98px) {
+//     @content;
+//   }
+// }
+
+@mixin cmq ($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

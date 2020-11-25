@@ -1,0 +1,35 @@
+.main-btn-w {
+  color: $secondary-color;
+  @include main-btn;
+  @include border-image($gradient); //do not forget to add border-image-slice
+  border-image-slice: 1;
+  @include transition();
+
+  &:hover {
+    border-image-source: none;
+    background-color: $secondary-color;
+    color: $white;
+  }
+}
+
+.main-btn-colored {
+  @include main-btn;
+  @include transition();
+  color: $white;
+  background-color: $secondary-color;
+
+  &:hover {
+    color: $secondary-color;
+    background-color: $white;
+  }
+}
+
+.load-btn {
+  display: flex;
+  margin: 3rem auto 0;
+}
+
+// &:hover {
+//   color: $white;
+//   background-color: $secondary-color;
+// }

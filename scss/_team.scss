@@ -1,0 +1,79 @@
+.team {
+  .card {
+    @include card-shadow;
+
+    &-top {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: $gradient;
+        @include transition;
+        opacity:0 ;
+      }
+    }
+
+    &-icon {
+      display: none;
+      background-color: $white;
+      font-size: 1.5rem;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include transform(translateX(-50%));
+
+      i {
+        color: #6c6c6c;
+        padding:.5rem;
+        @include transition();
+
+        //Media Query
+        @include large {
+          padding: .4rem .3rem;
+        }
+        @include xsmall {
+          font-size: 1rem
+        }
+
+        &:hover {
+          color: $secondary-color;
+          background-color: darken($bg-grey, 6);
+          @include transition();
+        }
+      }
+    }
+    
+    &-body {
+      text-align: center;
+    }
+
+    &:hover {
+      .card-top::before {
+        opacity: .8;
+      }
+
+      .card-icon {
+        display: block ;
+        // z-index: 1;
+        @include animation(fromBottom 1s forwards)
+      }
+      @include keyframes(fromBottom) {
+        from {
+          @include transform(translate(-50%, 30%));
+        }
+        to {
+          @include transform(translate(-50%,-50%));
+        }
+      }
+
+      .title {
+        color: $secondary-color;
+      }
+    }
+  }
+}

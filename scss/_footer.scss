@@ -1,0 +1,99 @@
+.footer {
+  background-image: url(../img/main-bg.jpg);
+  background-size: cover;
+  color: $white;
+  padding-bottom: 0;
+
+  &-top {
+    text-align: center;
+
+    .logo{
+      padding: {
+        left: 1rem;
+        right: 1rem;
+      } 
+    }
+
+    .footer-social {
+      padding: 3rem 0 5rem;
+      // Media Query
+      @include xsmall {
+        padding: 2rem 0;
+      }
+      i {
+        font-size: 1.5rem;
+        padding: .5rem;
+        margin:  0 .5rem;
+        border: 1px solid $white;
+        color: $white;
+        @include transition;
+        &.fa-facebook-f {
+          padding: .5rem .8rem;
+          @include xsmall {
+            padding: .3rem .6rem;
+          }
+        }
+        //Media Query
+        @include xsmall {
+          font-size: 1.2rem;
+          padding: .3rem;
+          margin: 0 .3rem;
+        }
+
+        &:hover {
+          color: $secondary-color;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+  &-menu {
+    @include flex;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+
+    //Media Query 
+    @include medium {
+      font-size: .9rem;
+    }
+    @include small {
+      padding: 2rem 0;
+      flex-direction: column;
+      text-align: center;
+    }
+    @include xsmall {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    &__right {
+      @include flex;
+
+      //Media Query
+      @include small {
+        order: -1;
+        margin: 0 auto 1.5rem;
+      }
+      @include xsmall {
+        order: -1;
+        flex-direction: column;
+        margin-bottom: 1rem;
+      }
+
+      a {
+        margin-left: 1.5rem;
+        color: $white;
+        @include xsmall {
+          margin-bottom: .3rem;
+          margin-left: 0;
+        }
+
+        &:hover {
+          color: darken($color: $white, $amount: 9);
+        }
+      }
+    }
+  }
+}

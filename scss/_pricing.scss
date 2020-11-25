@@ -1,0 +1,148 @@
+.pricing {
+  .card {
+    @include card-shadow;
+    text-align: center;
+    width: 100%;
+
+    &-body {
+      padding: 3rem 2rem;
+      @include flex;
+      // align-items: center;
+      flex-direction: column;
+      @include medium {
+        padding: 1rem .75rem;
+      }
+
+      .main-btn-w {
+        padding: 1rem 3rem;
+        margin-top: auto; // make button always at the bottom after giving flex to parent class
+        //remove button from flex to put in the center 
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        @include medium {
+          padding: .7rem 2rem;
+        }
+      }
+    }
+
+    .title {
+      position: relative;
+      margin-bottom: 3.5rem;
+      @include medium {
+        font-size: 1.5rem;
+      }
+
+    }
+    .title::after {
+      position: absolute;
+      content: '';
+      bottom:-80%;
+      left: 50%;
+      @include transform(translateX(-50%));
+      height: 1px;
+      width: 3rem;
+      background-color: #ccc;
+    } 
+
+    &-price  {
+      color: $secondary-color;
+      font-size: 3rem;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+      // Media Query
+      @include medium {
+        font-size: 2.5rem;
+      }
+      @include xsmall {
+        font-size: 2.5rem;
+      }
+    
+      span {
+        font-size: 1rem;
+      }
+
+      &::before {
+        content: '$';
+        font-size: 1.7rem;
+        position: absolute;
+        top: 0;
+        left: 20%;
+        // Media Query 
+        @include large {
+          left: 15%;
+        }
+        @include medium {
+          left: 15%;
+        }
+        @include small {
+          left: 33%;
+        }
+        @include xsmall {
+          left:15%;
+          font-size: 1.5rem
+        }
+        @include cmq(360px, 415px) {
+          left: 24%;
+        }
+        @include cmq(415px, 577px) {
+          left: 33%;
+        }
+      }
+
+      &.three-digit-price::before {
+        left: 15%;
+        //Media Query
+        @include large {
+          left: 10%;
+        }
+        @include medium {
+          left: 8%;
+        }
+        @include small {
+          left: 31%;
+        }
+        @include xsmall {
+          left: 10%;
+        }
+        @include cmq(360px, 415px) {
+          left: 20%;
+        }
+        @include cmq(415px, 577px) {
+          left: 31%;
+        }
+      }
+    }
+
+    &:hover {
+      .title {
+        color: $secondary-color;
+      }
+      .main-btn-w {
+        background-color: $secondary-color;
+        color: $white;
+      }
+    }
+  } 
+
+  .text {
+    padding: 3rem 0;
+    font-style: .95rem;
+    li {
+      text-align: start;
+      border-bottom: 1px solid darken($bg-grey, 7);
+      padding: 1rem 0;
+
+      &::before {
+        content: '✓';
+        padding-right: 1rem;
+        font-weight: 900;
+      }
+    }
+
+    &:nth-child(1) {
+      padding-top: 0;
+    }
+  }
+}

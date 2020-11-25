@@ -1,0 +1,71 @@
+/*font variables*/
+$logo-font: 'Audiowide', cursive;
+$title-font: 'Raleway', sans-serif;
+$text-font: 'Roboto', sans-serif;
+$blockquote-font:'Exo 2', sans-serif;
+
+/*color variables*/
+$white: #fff;
+$text-color: #616161;
+$bg-grey: #f6f6f6;
+$secondary-color: #9656fd;
+$blue: #3600ff;
+$gradient: linear-gradient(to right, #f659f8, #de4af8, #c33cf8, #a331f8, #7d2af9);
+
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Raleway:wght@400;500;600&family=Roboto:wght@400;500;700&family=Exo+2:wght@400;600&display=swap');
+
+// Mixins
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s){
+  transition: $property $duration $animate $delay; 
+}
+
+@mixin transform($transform){
+-moz-transform: $transform;
+-o-transform: $transform;
+-ms-transform: $transform;
+-webkit-transform: $transform;
+transform: $transform;
+}
+
+// Placeholder Mixins
+
+@mixin placeholder {
+&.placeholder { @content; }
+&:-moz-placeholder { @content; }
+&::-moz-placeholder { @content; }
+&::-webkit-input-placeholder { @content; }
+}
+
+// Animation
+@mixin animation ($args) {
+-webkit-animation: $args;
+   -moz-animation: $args;
+     -o-animation: $args;
+        animation: $args;
+}
+
+// Flexbox
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+// Keyframe
+@mixin keyframes ( $animation-name ) {
+@-webkit-keyframes #{$animation-name} {
+    @content;
+}
+@-moz-keyframes #{$animation-name}  {
+    @content;
+}
+@-o-keyframes #{$animation-name} {
+    @content;
+}
+@keyframes #{$animation-name} {
+    @content;
+}
+}

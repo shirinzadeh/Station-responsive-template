@@ -1,0 +1,170 @@
+.card-header {
+  p {  
+    &:first-child {
+      color: $secondary-color;
+    }
+  }
+  
+  .card--comment::before {
+    content: '\f075';
+  }
+  .card--heart::before {
+    content: '\f004';
+  }
+  .card--heart::before,
+  .card--comment::before {
+    font-family: "Font Awesome 5 Free";
+    padding-right: 5px;
+    color: $secondary-color;
+  }
+}
+
+.blog {
+  .card {
+    @include card-shadow;
+    &-header {
+      @include flex;
+      justify-content: space-around;
+  
+      p:first-child {
+        color: $secondary-color;
+      }
+    }
+
+    &-body {
+      @include flex;
+      flex-direction: column;
+
+      .text {
+        padding: 1.5rem 0 2rem;
+      }
+
+      .btn {
+        margin: {
+          top: auto;
+          right: auto;
+          bottom: 1.5rem;
+        }
+        padding-left: 0;
+        font-weight: 700;
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+          color: $secondary-color;
+        }
+      }
+    }
+
+    &:hover {
+      .title,
+      .btn {
+        color: $secondary-color;
+      }
+    }
+  }
+  .main-btn-w {
+    margin: 3rem auto 0;
+  }
+}
+
+/* BLOG PAGE HEADER */
+
+.blogpage{
+  .banner {
+    &-heading {
+      font-weight: 400;
+    }
+    &-text {
+      font-weight: 500;
+      @include xsmall {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+/* BLOG READ PAGE */
+
+.blog-read {
+  &__img {
+    background-image: url(../img/blog-read.jpg);
+    @include bg-cover;
+    height: 70vh ;
+    margin-bottom: 1.5rem;
+    //Media Query
+    @include small {
+      height: 50vh;
+    }
+    @include xsmall {
+      height: 40vh;
+    }
+  }
+
+  .card-header {
+    background-color: transparent;
+    border-bottom: 0;
+    padding: 0;
+
+    &__content {
+      @include flex;
+
+      p {
+        margin-right: 1rem;
+        @include xsmall {
+          margin-right: .8rem;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    font : 2rem $title-font;
+    padding: 3rem 0;
+    @include xsmall {
+      font-size: 1.8rem;
+    }
+  }
+
+  blockquote {
+    @include flex;
+    margin: 2.5rem 2rem;
+    padding: 2rem;
+    line-height: 2rem;
+	  border: 1px solid transparent;    //border must come before border-image
+	  @include border-image($gradient);
+    border-image-slice: 1; 
+
+    //Media Query
+    @include xsmall {
+      margin: 2rem 0;
+      padding: 1rem;
+    }
+
+    p {
+      // font-family: $blockquote-font;
+      font-style: italic;
+    }
+
+    i {
+      font-size: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  .heading {
+    padding: 5rem 0;
+    position: static;
+
+    @include xsmall {
+      padding: 3rem 0;
+    }
+
+    //disable triangle after heading
+    &::before,
+    &::after {
+      position: static;
+      border:0;
+    }
+  }
+}

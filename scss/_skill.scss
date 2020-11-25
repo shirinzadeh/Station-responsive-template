@@ -1,0 +1,51 @@
+.skill {
+  &-area {
+    flex-direction: column;
+    text-transform: uppercase;
+
+    .skill-content {
+      @include flex;
+      justify-content: space-between;
+      padding-bottom: 1.7rem;
+      font-weight: 500;
+
+      //Media Query 
+      @include xsmall {
+        font-size: .9rem;
+      }
+    }
+
+    .progress {
+      border: 1px solid;
+      border-image-slice: 1;
+      border-image-source: $gradient;
+      height: .8rem;
+
+      // Media Query
+      @include xsmall {
+        height: .5rem;
+      }
+
+      &-bar--a {
+        width: 60%; 
+        background-color: #9656fd;
+      }
+      &-bar--b {
+        width: 80%;
+        background-color: #fd4efd;
+      }
+      &-bar--c {
+        width: 50%;
+        background-color: #ca3afd;
+      }
+    }
+
+    &:nth-child(2) {
+      padding: 1.5rem 0;
+      //Media Query 
+      @include small {
+        padding: 1.9rem 0;
+      }
+    }
+  }
+}

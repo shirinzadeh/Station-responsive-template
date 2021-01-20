@@ -26,7 +26,13 @@ hr {
 
 // Padding before and after sections
 .sttn-section {
-  padding:5rem
+  padding:5rem;
+  @include small {
+    padding: 4rem 2rem;
+  }
+  @include xsmall {
+    padding: 3rem 1rem;
+  }
 }
 
 .subheading,
@@ -166,12 +172,9 @@ hr {
   @include transition();
   //Media Query
   @include large {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   @include medium {
-    font-size: 1.9rem;
-  }
-  @include small {
     font-size: 1.9rem;
   }
   @include xsmall {

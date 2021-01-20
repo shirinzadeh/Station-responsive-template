@@ -28,7 +28,7 @@
     .nav-item {
       text-transform: uppercase;
       padding: 2.25rem .5rem;
-      /**Media Query */   
+      /**Media Query */  
       @include medium {
         padding: 1rem 0;
       } 

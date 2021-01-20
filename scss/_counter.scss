@@ -23,5 +23,11 @@
         background-color: $white;
       }
     }
+
+    .title {
+      @include medium {
+        font-size: 1.6rem;
+      }
+    }
   }
 }

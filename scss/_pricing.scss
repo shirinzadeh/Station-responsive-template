@@ -21,7 +21,7 @@
         margin-left: auto;
         margin-right: auto;
         @include medium {
-          padding: .7rem 2rem;
+          padding: .7rem 1.3rem;
         }
       }
     }
@@ -49,18 +49,36 @@
       color: $secondary-color;
       font-size: 3rem;
       font-weight: 400;
-      position: relative;
+      width: 80%;
       display: inline-block;
+      margin: auto;
+      position: relative;
       // Media Query
+      @include large {
+        font-size: 2.5rem ;
+      }
       @include medium {
-        font-size: 2.5rem;
-      }
+        font-size: 2.3rem;
+        width: 100%;
+      } 
+      @include small{
+        width: 50%;
+      } 
       @include xsmall {
-        font-size: 2.5rem;
+        font-size: 2.3rem;  
+        width: 50%;
       }
-    
+      @include cmq(0,470px){
+        width: 50%;
+      }
+      @include cmq(0,400px){
+        width: 70%;
+      }
       span {
         font-size: 1rem;
+        @include xsmall {
+          font-size: .9rem;
+        }
       }
 
       &::before {
@@ -68,49 +86,53 @@
         font-size: 1.7rem;
         position: absolute;
         top: 0;
-        left: 20%;
-        // Media Query 
+        left: 10%;
+        //Media Query 
         @include large {
-          left: 15%;
+          left: 0%;
         }
         @include medium {
           left: 15%;
-        }
-        @include small {
-          left: 33%;
+          font-size: 1.5rem;
         }
         @include xsmall {
-          left:15%;
-          font-size: 1.5rem
+          font-size: 1.5rem;
         }
-        @include cmq(360px, 415px) {
-          left: 24%;
+        @include cmq(768px, 880px) {
+          left: 5%;
         }
-        @include cmq(415px, 577px) {
-          left: 33%;
+        @include cmq(633px, 768px) {
+          left: 15%;
+        }
+        @include cmq(0,470px){
+          left: 0;
         }
       }
 
-      &.three-digit-price::before {
-        left: 15%;
-        //Media Query
+      &.three-digit-price {
         @include large {
-          left: 10%;
+          width: 100%;
         }
-        @include medium {
-          left: 8%;
+        @include cmq(0,400px){
+          width: 75%;
         }
-        @include small {
-          left: 31%;
-        }
-        @include xsmall {
-          left: 10%;
-        }
-        @include cmq(360px, 415px) {
-          left: 20%;
-        }
-        @include cmq(415px, 577px) {
-          left: 31%;
+        &::before {
+          left: 5%;
+          @include medium {
+            left: 10%;
+          }
+          @include cmq(768px, 880px) {
+            left: 0%;
+          }
+          @include cmq(633px, 768px) {
+            left: 10%;
+          }
+          @include cmq(0,470px){
+            left: 0;
+          }
+          
+
+          
         }
       }
     }

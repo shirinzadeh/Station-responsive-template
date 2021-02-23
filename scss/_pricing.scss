@@ -10,18 +10,18 @@
       // align-items: center;
       flex-direction: column;
       @include medium {
-        padding: 1rem .75rem;
+        padding: 1rem 0.75rem;
       }
 
       .main-btn-w {
         padding: 1rem 3rem;
         margin-top: auto; // make button always at the bottom after giving flex to parent class
-        //remove button from flex to put in the center 
-        display: block; 
+        //remove button from flex to put in the center
+        display: block;
         margin-left: auto;
         margin-right: auto;
         @include medium {
-          padding: .7rem 1.3rem;
+          padding: 0.7rem 1.3rem;
         }
       }
     }
@@ -32,20 +32,19 @@
       @include medium {
         font-size: 1.5rem;
       }
-
     }
     .title::after {
       position: absolute;
-      content: '';
-      bottom:-80%;
+      content: "";
+      bottom: -80%;
       left: 50%;
       @include transform(translateX(-50%));
       height: 1px;
       width: 3rem;
       background-color: #ccc;
-    } 
+    }
 
-    &-price  {
+    &-price {
       color: $secondary-color;
       font-size: 3rem;
       font-weight: 400;
@@ -55,39 +54,39 @@
       position: relative;
       // Media Query
       @include large {
-        font-size: 2.5rem ;
+        font-size: 2.5rem;
       }
       @include medium {
         font-size: 2.3rem;
         width: 100%;
-      } 
-      @include small{
+      }
+      @include small {
         width: 50%;
-      } 
+      }
       @include xsmall {
-        font-size: 2.3rem;  
+        font-size: 2.3rem;
         width: 50%;
       }
-      @include cmq(0,470px){
+      @include cmq(0, 470px) {
         width: 50%;
       }
-      @include cmq(0,400px){
+      @include cmq(0, 400px) {
         width: 70%;
       }
       span {
         font-size: 1rem;
         @include xsmall {
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
       }
 
       &::before {
-        content: '$';
+        content: "$";
         font-size: 1.7rem;
         position: absolute;
         top: 0;
         left: 10%;
-        //Media Query 
+        //Media Query
         @include large {
           left: 0%;
         }
@@ -104,7 +103,7 @@
         @include cmq(633px, 768px) {
           left: 15%;
         }
-        @include cmq(0,470px){
+        @include cmq(0, 470px) {
           left: 0;
         }
       }
@@ -113,7 +112,7 @@
         @include large {
           width: 100%;
         }
-        @include cmq(0,400px){
+        @include cmq(0, 400px) {
           width: 75%;
         }
         &::before {
@@ -127,12 +126,9 @@
           @include cmq(633px, 768px) {
             left: 10%;
           }
-          @include cmq(0,470px){
+          @include cmq(0, 470px) {
             left: 0;
           }
-          
-
-          
         }
       }
     }
@@ -146,18 +142,18 @@
         color: $white;
       }
     }
-  } 
+  }
 
   .text {
     padding: 3rem 0;
-    font-style: .95rem;
+    font-style: 0.95rem;
     li {
       text-align: start;
       border-bottom: 1px solid darken($bg-grey, 7);
       padding: 1rem 0;
 
       &::before {
-        content: '✓';
+        content: "✓";
         padding-right: 1rem;
         font-weight: 900;
       }

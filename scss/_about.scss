@@ -1,6 +1,9 @@
-.about{
+.about {
   &-heading {
     padding: 0;
+    @include medium {
+      padding-top: 2rem;
+    }
     @include small {
       padding-top: 2rem;
     }
@@ -15,7 +18,7 @@
       border-left: 0px solid transparent;
       border-right: 0px solid transparent;
     }
-  
+
     &::after {
       position: static;
     }

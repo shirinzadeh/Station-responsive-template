@@ -23,36 +23,38 @@
     @include card-shadow;
 
     .portfolio-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: $gradient;
-      opacity: 0;
-      @include transition;
-      display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $gradient;
+        opacity: 0;
+        @include transition;
+        display: flex;
 
-
-      &__text {     
-         width: 100%;
-         margin: auto;
-         text-align: center;
-         color: $white;
-         opacity: 0;
-         @include transition;
-      }
+        &__text {
+            width: 100%;
+            background-color: transparent;
+            border-color: transparent;
+            margin: auto;
+            text-align: center;
+            color: $white;
+            opacity: 0;
+            @include transition;
+        }
     }
 
     &:hover {
-      .portfolio-overlay {
-        opacity: .8;
-      }
-      .portfolio-overlay__text {
-        opacity: 1;
-      }
+        .portfolio-overlay {
+            opacity: 0.8;
+        }
+
+        .portfolio-overlay__text {
+            opacity: 1;
+        }
     }
-  }
+}
 
   //making button in center after giving parent element flex (container-flex class)
   .main-btn-w {

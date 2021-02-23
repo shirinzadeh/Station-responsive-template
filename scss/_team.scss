@@ -5,7 +5,7 @@
     &-top {
       position: relative;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
@@ -13,7 +13,7 @@
         left: 0;
         background-image: $gradient;
         @include transition;
-        opacity:0 ;
+        opacity: 0;
       }
     }
 
@@ -26,18 +26,28 @@
       bottom: 0;
       left: 50%;
       @include transform(translateX(-50%));
+      //Media Query
+      @include large {
+        font-size: 1.2rem;
+      }
+      @include medium {
+        font-size: 1.3rem;
+      }
 
       i {
         color: #6c6c6c;
-        padding:.5rem;
+        padding: 0.5rem;
         @include transition();
 
         //Media Query
         @include large {
-          padding: .4rem .3rem;
+          padding: 0.4rem;
+        }
+        @include medium {
+          padding: 0.3rem;
         }
         @include xsmall {
-          font-size: 1rem
+          font-size: 1rem;
         }
 
         &:hover {
@@ -47,27 +57,26 @@
         }
       }
     }
-    
+
     &-body {
       text-align: center;
     }
 
     &:hover {
       .card-top::before {
-        opacity: .8;
+        opacity: 0.8;
       }
 
       .card-icon {
-        display: block ;
-        // z-index: 1;
-        @include animation(fromBottom 1s forwards)
+        display: block;
+        @include animation(fromBottom 1s forwards);
       }
       @include keyframes(fromBottom) {
         from {
           @include transform(translate(-50%, 30%));
         }
         to {
-          @include transform(translate(-50%,-50%));
+          @include transform(translate(-50%, -50%));
         }
       }
 

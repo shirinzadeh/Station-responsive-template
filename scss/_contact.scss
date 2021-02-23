@@ -20,6 +20,16 @@
     }
   }
 
+  .input-top {
+    @include small {
+      padding: 2rem 0;
+      margin-bottom: 1rem 0;
+    }
+    @include xsmall {
+      padding: 2rem 0;
+      margin-bottom: 1rem 0;
+    }
+  }
   .form-control {
     border: {
       top: none;
@@ -30,22 +40,28 @@
     background-color: transparent;
     padding-left: 0;
     font-weight: 500;
-
+  
     &:hover,
     &:focus {
       @include placeholder {
         color: $secondary-color;
       }
-      border-color: $secondary-color;
+      border-bottom-color: $secondary-color;
     }
-
+  
     &:focus {
       outline: none;
       box-shadow: none;
     }
   }
-
+  
   .form-group {
     padding-bottom: 2rem;
+  
+    .form-error {
+      font-size: 0.7rem;
+      color: red;
+      margin-top: 0.3rem;
+    }
   }
 }

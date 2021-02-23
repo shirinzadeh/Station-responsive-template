@@ -9,9 +9,9 @@
       padding-bottom: 1.7rem;
       font-weight: 500;
 
-      //Media Query 
+      //Media Query
       @include xsmall {
-        font-size: .9rem;
+        font-size: 0.9rem;
       }
     }
 
@@ -19,15 +19,15 @@
       border: 1px solid;
       border-image-slice: 1;
       border-image-source: $gradient;
-      height: .8rem;
+      height: 0.8rem;
 
       // Media Query
       @include xsmall {
-        height: .5rem;
+        height: 0.5rem;
       }
 
       &-bar--a {
-        width: 60%; 
+        width: 60%;
         background-color: #9656fd;
       }
       &-bar--b {
@@ -42,7 +42,7 @@
 
     &:nth-child(2) {
       padding: 1.5rem 0;
-      //Media Query 
+      //Media Query
       @include small {
         padding: 1.9rem 0;
       }

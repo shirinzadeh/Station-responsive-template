@@ -2,7 +2,7 @@
   .card {
     @include flex;
     @include card-shadow;
-    width: 100%;
+    min-width: 100%;
 
     .service-icon {
       margin: 3rem auto;
@@ -16,11 +16,11 @@
       @include flex-center;
       @include transition();
 
-      // Media Query 
+      // Media Query
       @include xsmall {
-        font-size: 2rem;
-        height: 3rem;
-        width: 3rem;
+        font-size: 3rem;
+        height: 4rem;
+        width: 4rem;
       }
     }
 
@@ -43,7 +43,11 @@
       text-align: center;
     }
 
-    &:hover  {
+    .main-btn-w {
+      max-width: 225px;
+    }
+
+    &:hover {
       .service-icon,
       .main-btn-w {
         background: $secondary-color;

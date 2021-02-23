@@ -57,8 +57,8 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="banner  ">
-              <div class="logo">Station</div>
+            <div class="banner">
+              <img src="img/logo.png" alt="Logo" class="banner-img">
               <div class="banner-heading">we have talented team</div>
               <div class="banner-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's typesetting industry standard dummy text ever since the typesetting.</div>
               <button class="btn main-btn banner-btn">learn more</button>
@@ -779,11 +779,15 @@
 
         <div class="col-lg-8 col-md-7">
           <form class="needs-validation" novalidate>
-            <div class="form-group d-flex ">
-              <input type="text" class="form-control mr-4" placeholder="First Name" required>
-              <div class="valid-feedback">Looks Good</div>
-              <input type="text" class="form-control" placeholder="Last Name" required>
-              <div class="valid-feedback">Looks Good</div>
+            <div class="form-group  d-flex flex-column flex-md-row ">
+              <div class="input-top d-block w-100 mr-4">
+                <input type="text" class="form-control mr-4" placeholder="First Name" required>
+                <div class="valid-feedback">Looks Good</div>
+              </div>
+              <div class="d-block w-100">
+                <input type="text" class="form-control" placeholder="Last Name" required>
+                <div class="valid-feedback">Looks Good</div>
+              </div>
             </div>
             <div class="form-group">
               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your email" required>

@@ -1,33 +1,57 @@
 .testimonial {
   &-content {
+    height: 21rem;
+    min-height: 21rem;
     text-align: center;
     padding-top: 2rem;
     position: relative;
     @include card-shadow;
-    
+    @include small {
+      height: 25rem;
+      min-height: 25rem;
+    }
+    @include xsmall {
+      height: 18rem;
+      min-height: 18rem;
+    }
+
     //quotes
     .title {
+      padding: 0 2rem;
+      @include large {
+        padding: 0 1.6rem;
+      }
+      @include medium {
+        padding: 0 1.5rem;
+      }
+      @include small {
+        padding: 0 1rem;
+      }
+      @include xsmall {
+        padding: 0 1.2rem;
+      }
       &::before {
-        content: '\f10d';
-        left: 11%;
+        content: "\f10d";
+        left: 2%;
         //Media Query
         @include small {
-          left: 27%;
+          //   left: 0%;
         }
       }
+
       &::after {
-        content: '\f10e';
-        right: 11%;
-        top: 12%;
+        content: "\f10e";
+        right: 2%;
+        top: 10%;
         //Media Query
         @include small {
-          right: 27%;
-          top: 15%;
+          //   right: 2%;
         }
       }
+
       &::before,
       &::after {
-        font-family:  "Font Awesome 5 Free";
+        font-family: "Font Awesome 5 Free";
         font-weight: 900;
         color: $secondary-color;
         font-size: 1rem;
@@ -37,26 +61,26 @@
 
     .text {
       padding: 3rem 0.5rem;
-    }   
-    
+    }
+
     //triangle
     &::after {
       content: "";
       position: absolute;
       width: 0;
       height: 0;
-      bottom: -2rem; 
+      bottom: -2rem;
       left: 50%;
       border: 1rem solid black;
       border-color: transparent transparent #fff #fff;
       transform-origin: 0 0;
       @include transform(translateX(-50%) rotate(-45deg));
-      box-shadow: -2px 2px 2px 0 #c0c0c0; 
+      box-shadow: -2px 2px 2px 0 #c0c0c0;
     }
 
     //giving transition to gradient bg
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       right: 0;
@@ -64,24 +88,27 @@
       left: 0;
       background-image: $gradient;
       z-index: -1;
-      @include transition(opacity .3s ease-in-out );
+      @include transition(opacity 0.3s ease-in-out);
       opacity: 0;
     }
 
     &:hover {
       .title,
       .text {
-        color: $white ;
+        color: $white;
       }
+
       //giving  transition to gradient bg
       &::before {
         opacity: 1;
       }
+
       &.testimonial-content::after {
-        border-color: transparent transparent #c83afd #c83afd ;
+        border-color: transparent transparent #c83afd #c83afd;
       }
+
       //change quote color when hover content
-      .title{
+      .title {
         &::before,
         &::after {
           color: $white;
@@ -95,11 +122,11 @@
     @include flex;
 
     &--avatar {
-      width: 80px;
+      width: 80px !important;
       height: 80px;
       margin: 0;
-      background-image: url(../img/image.jpg);
-      @include bg-cover;
+      // background-image: url(../assets/img/image.jpg);
+      // @include bg-cover;
     }
 
     &__about {
@@ -115,32 +142,25 @@
   }
 }
 
-/* // enable scroll owl carousel on mobile */
-.owl-carousel .owl-stage, .owl-carousel.owl-drag .owl-item{
-  -ms-touch-action: auto;
-      touch-action: auto;
-}
-
-.owl-theme .owl-nav.disabled+.owl-dots {
-  margin-top: 1rem;
-}
-
-.owl-theme .owl-dots .owl-dot {
+.owl-dots {
   span {
     background-color: $white;
   }
+
   &.active span {
     background-color: $secondary-color;
   }
+
   span,
   &.active span {
     width: 15px;
     height: 15px;
     margin: 5px 7px;
     border: 2px solid $secondary-color;
-    transition: opacity .2s ease;
-    border-radius:50%;
+    transition: opacity 0.2s ease;
+    border-radius: 50%;
   }
+
   &:focus {
     outline: none;
     box-shadow: none;
